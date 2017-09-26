@@ -1,0 +1,7 @@
+﻿to re-generated db class, save file Database.tt
+after generating Petapoco db class, make nullable these fields: Modified, Completed, Urgent
+
+CREATE LOGIN [ed] WITH PASSWORD = 'Password1.'
+Use EM_Webapi;
+CREATE USER [ed] FOR LOGIN [ed]
+EXEC sp_addrolemember N'db_owner', N'ed'

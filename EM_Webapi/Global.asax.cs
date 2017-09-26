@@ -31,7 +31,7 @@ namespace EM_Webapi
             if (routeData != null)
             {
                 for (int i = 0; i < routeData.Values.Keys.Count; i++)
-                    Debug.Write(string.Format(" {0}: {1}", routeData.Values.Keys.ElementAt(i), routeData.Values.Values.ElementAt(i)));
+                    Debug.WriteLine(string.Format("ROUTE DATA {0}: {1}", routeData.Values.Keys.ElementAt(i), routeData.Values.Values.ElementAt(i)));
                 Debug.WriteLine("");
             }
         }
