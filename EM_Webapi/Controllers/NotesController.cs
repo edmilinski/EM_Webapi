@@ -215,7 +215,7 @@ namespace EM_Webapi.Controllers
         }
         private SqlConnection GetSqlConnection()
         {
-            string connStr = ConfigurationManager.AppSettings["dbSmarterasp"];
+            string connStr = ConfigurationManager.ConnectionStrings["Smarterasp"].ToString();
             return new SqlConnection(connStr);
         }
 

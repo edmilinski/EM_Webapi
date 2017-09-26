@@ -10,31 +10,47 @@ namespace EM_Webapi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.EnableCors();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "LogsByAction",
-                routeTemplate: "api/{controller}/{category}/{action}/{param}"
-            );
+         config.Routes.MapHttpRoute(
+             name: "LogsByAction",
+             routeTemplate: "logs/{category}/{action}/{param}",
+             defaults: new {controller = "Logs" }
+         );
 
-            config.Routes.MapHttpRoute(
-                name: "LogsById",
-                routeTemplate: "api/{controller}/{category}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+         config.Routes.MapHttpRoute(
+             name: "LogsById",
+             routeTemplate: "logs/{category}/{id}",
+             defaults: new { id = RouteParameter.Optional, controller = "Logs" }
+         );
 
-/*            config.Routes.MapHttpRoute(
-                name: "DefaultByAction",
-                routeTemplate: "api/{controller}/{action}/{param}"
-            );
-*/
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-        }
-    }
+         config.Routes.MapHttpRoute(
+             name: "GetFilteredTodos",
+             routeTemplate: "todos/filtered",
+             defaults: new { controller = "Todos", action = "GetFilteredTodos" }
+         );
+
+         config.Routes.MapHttpRoute(
+             name: "GetFilteredTodosPage",
+             routeTemplate: "todos/filteredpage/{page}/{count}",
+             defaults: new { controller = "Todos", action = "GetFilteredTodosPage"}
+         );
+
+         config.Routes.MapHttpRoute(
+             name: "TodosById",
+             routeTemplate: "todos/{userid}/{id}",
+             defaults: new {id = RouteParameter.Optional, controller = "Todos" }
+         );
+
+         config.Routes.MapHttpRoute(
+             name: "TodosDefault",
+             routeTemplate: "todos/",
+             defaults: new { controller = "Todos" }
+         );
+         
+      }
+   }
 }
