@@ -98,7 +98,6 @@
     </Content>
     <Content Include="SQL\Configure.sql" />
     <Content Include="SQL\Logs.sql" />
-    <Content Include="SQL\Notes.sql" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="SQL\Todos.sql" />
@@ -110,9 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ApiSandboxController.cs" />
     <Compile Include="Controllers\TodosController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
-    <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -137,6 +137,50 @@ namespace EM_Webapi.Model
 
     
 
+	[TableName("dbo.JsonCollections")]
+
+
+
+
+	[ExplicitColumns]
+
+    public partial class JsonCollection : LocaldbDB.Record<JsonCollection>  
+    {
+
+
+
+		[Column] public int Id { get; set; }
+
+
+
+
+
+		[Column] public string Name { get; set; }
+
+
+
+
+
+		[Column] public string Value { get; set; }
+
+
+
+
+
+		[Column] public DateTime? Modified { get; set; }
+
+
+
+
+
+		[Column] public string GroupName { get; set; }
+
+
+
+	}
+
+    
+
 	[TableName("dbo.Logs")]
 
 
@@ -201,7 +245,7 @@ namespace EM_Webapi.Model
 
 
 
-		[Column] public DateTime ? modified { get; set; }
+		[Column] public DateTime modified { get; set; }
 
 
 
@@ -231,13 +275,13 @@ namespace EM_Webapi.Model
 
 
 
-		[Column] public bool ? urgent { get; set; }
+		[Column] public bool urgent { get; set; }
 
 
 
 
 
-		[Column] public bool ? completed { get; set; }
+		[Column] public bool completed { get; set; }
 
 
 
